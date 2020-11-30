@@ -8,8 +8,7 @@ ALLOWED_HOSTS = [
         'static.dianarice.art',
         'media.dianarice.art'
         'dianarice.art',
-        'bradriceadmin.oh-joy.org',
-        'stage.dianarice.art',
+        'admin.dianarice.art',
         ]
 
 try:
