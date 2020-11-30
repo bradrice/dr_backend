@@ -1,6 +1,6 @@
 from .base import *
 import json 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
         '45.56.110.221',
