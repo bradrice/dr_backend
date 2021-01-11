@@ -1,8 +1,6 @@
 from .base import *
 import json
 
-
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
