@@ -166,7 +166,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = _STATIC_URL
+   
+STATIC_ROOT = _STATIC_ROOT 
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
