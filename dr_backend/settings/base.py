@@ -170,6 +170,13 @@ STATIC_URL = _STATIC_URL
    
 STATIC_ROOT = _STATIC_ROOT 
 
+if DEBUG:
+    MEDIA_ROOT = root(_MEDIA_ROOT)
+else: 
+    MEDIA_ROOT = _MEDIA_ROOT
+
+MEDIA_URL = _MEDIA_URL
+
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     "http://127.0.0.1:3000",
