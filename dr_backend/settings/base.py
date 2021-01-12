@@ -168,6 +168,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    "http://127.0.0.1:3000",
+    "http://stage.dianarice.art",
+    "https://media.dianarice.art",
+    "https://dianarice.art",
+    "https://www.dianarice.art"
+]
+
 VERSATILEIMAGEFIELD_SETTINGS = {
     # The amount of time, in seconds, that references to created images
     # should be stored in the cache. Defaults to `2592000` (30 days)
