@@ -66,7 +66,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'anymail',
-    'corsheaders',
+    # 'corsheaders',
     'artwork', # activate the new app,
     'carousel',
     'rest_framework',
