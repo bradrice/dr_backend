@@ -86,7 +86,6 @@ class ArtworkMediaTypes(generics.ListAPIView):
         """
         mediaitems = Artwork.objects.all().order_by('media').distinct('media')
         # items = set(elements)
-        print (d)
         return mediaitems
 
     
