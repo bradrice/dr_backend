@@ -1,16 +1,16 @@
 from django.db import models
 
-from dr_backend.settings.base import *
+# from dr_backend.settings.base import *
 from versatileimagefield.fields import VersatileImageField, PPOIField
 from versatileimagefield.placeholder import OnStoragePlaceholderImage
 # from carousel.models import Carousel
 
 # Create your models here.
 
-def artwork_directory_path(instance, filename): 
+# def artwork_directory_path(instance, filename): 
   
     # file will be uploaded to MEDIA_ROOT / user_<id>/<filename> 
-    return MEDIA_ROOT + '/artwork/{0}'.format(filename) 
+    # return MEDIA_ROOT + '/artwork/{0}'.format(filename) 
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
@@ -36,6 +36,7 @@ class Artwork(models.Model):
         ('PS', 'Pastel'),
         ('CO', 'Conte Crayon'),
     )
+    
     artimage = VersatileImageField(
         'Image',
         upload_to='artwork',

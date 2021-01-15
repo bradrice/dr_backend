@@ -8,10 +8,12 @@ class PriceSerializer (serializers.DecimalField):
     def to_representation(self, instance):
         return "${}".format(instance)
 
+
 class InchSerializer (serializers.Serializer):
 
     def to_representation(self, instance):
         return "{}\"".format(instance)
+
 
 class ArtworkSerializer(serializers.HyperlinkedModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='detail')
@@ -29,3 +31,13 @@ class ArtworkSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Artwork
         fields = ('url', 'id', 'title', 'media', 'description', 'created', 'width', 'height', 'artimage', 'sold', 'price', 'price_format', 'forSale', 'showOnWebsite')
+
+    
+class MediaTypeSerializer (serializers.ModelSerializer):
+
+    def to_representation(self, value):
+        return {'key': value.media, 'value': value.get_media_display()}
+
+    class Meta:
+        model = Artwork
+        fields = ['media', 'media_display']
