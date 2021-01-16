@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'artwork', # activate the new app,
     'carousel',
+    'frontend',
     'rest_framework',
     'rest_framework.authtoken',
     'versatileimagefield',
