@@ -36,7 +36,7 @@ class Artwork(models.Model):
         ('PS', 'Pastel'),
         ('CO', 'Conte Crayon'),
     )
-    
+
     artimage = VersatileImageField(
         'Image',
         upload_to='artwork',
@@ -59,7 +59,7 @@ class Artwork(models.Model):
         blank=True,
         null=True
     )
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, default="Untitled")
     media = models.CharField(max_length=3, choices=MEDIA_TYPES)
     description = models.CharField(max_length=300, blank=True)
     entered_at = models.DateTimeField(auto_now_add=True)
