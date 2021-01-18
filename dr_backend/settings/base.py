@@ -70,6 +70,8 @@ INSTALLED_APPS = [
     'artwork', # activate the new app,
     'carousel',
     'frontend',
+    'about',
+    'home',
     'rest_framework',
     'rest_framework.authtoken',
     'versatileimagefield',

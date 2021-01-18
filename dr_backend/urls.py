@@ -23,5 +23,7 @@ urlpatterns = [
         path('', include('artwork.urls')),
         path('', include('carousel.urls')),
         path('', include('frontend.urls')),
+        path('', include('about.urls')),
+        path('', include('home.urls')),
         path('api-auth/', include('rest_framework.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
