@@ -27,7 +27,7 @@ class SendMessage(View):
                 "Contact message from dianarice.art",
                 composed,
                 "admin@mail.oh-joy.org",
-                ['bradrice1@gmail.com'],
+                ['di.di.rice@gmail.com'],
                 fail_silently=False
             )
             return HttpResponse('success')
