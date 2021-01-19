@@ -6,7 +6,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.core import serializers
-from bb_backend.settings.base import STRIPEKEY
+from dr_backend.settings.base import STRIPEKEY
 
 stripe.api_key = STRIPEKEY
 
