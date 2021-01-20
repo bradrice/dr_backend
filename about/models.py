@@ -7,7 +7,7 @@ from common import util
 class AboutPageContent(models.Model):
     abouttitle = models.CharField(max_length=200, verbose_name="About Page Title")
     artwork = models.ForeignKey(Artwork, verbose_name="Artwork to show on Home page", on_delete=models.CASCADE)
-    bodycontent = models.TextField(verbose_name="Body Content for About Page")
+    bodycontent = models.TextField(verbose_name="Body Content for About Page", blank=True, null=True)
 
     def clean(self):
         util.validate_only_one_instance(self)

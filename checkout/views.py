@@ -35,7 +35,7 @@ class CheckoutSession(View):
                     'title': title,
                     'id': itemid
                 },
-                description="Original artwork (%s) by Brad Rice" % title
+                description="Original artwork (%s) by Diana Rice" % title
             )
             
         except Exception as e:
