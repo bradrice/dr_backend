@@ -7,6 +7,10 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from django.core import serializers
 from dr_backend.settings.base import STRIPEKEY
+from twilio.rest import Client
+from artwork.models import Artwork
+
+
 
 stripe.api_key = STRIPEKEY
 
@@ -63,3 +67,37 @@ class CheckoutSession(View):
         # return HttpResponse(session.id, content_type='application/json')
         return JsonResponse({'clientSecret':intent['client_secret']})
 
+
+@method_decorator(csrf_exempt, name='dispatch')
+class SendSMS(View):
+
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('This is GET request')
+
+    def post(self, request, *args, **kwargs):
+        received_json_data = json.loads(request.body.decode("utf-8"))
+        print(received_json_data)
+        title = received_json_data.get('title')
+        id=received_json_data.get('id')
+        art = Artwork.objects.get(id=id)
+        art.sold = True;
+        art.save()
+
+        
+        # Your Account SID from twilio.com/console
+        account_sid = "AC1e8293ab7aa268792f9f6e365ee65ddd"
+        # Your Auth Token from twilio.com/console
+        auth_token  = "6c71bbb5ec8e026a7755614612e1839b"
+
+        client = Client(account_sid, auth_token)
+
+        message = client.messages.create(
+            #to="+13304105988",  #diana
+            to="+13306359725", #brad
+            from_="+13133273437",
+            body=f"Art - {title} on dianarice.art sold")
+
+        # print(message.sid)
+
+
+        return JsonResponse({'sid': message.sid, 'status': 'success'})
