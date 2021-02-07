@@ -6,7 +6,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.core import serializers
-from dr_backend.settings.base import STRIPEKEY
+from dr_backend.settings.base import STRIPEKEY, TWILIOKEY
 from twilio.rest import Client
 from artwork.models import Artwork
 
@@ -45,26 +45,7 @@ class CheckoutSession(View):
         except Exception as e:
             print (str(e))
             return HttpResponse(status=403)
-                # return jsonify(error=str(e)), 403
-        # session = stripe.checkout.Session.create(
-        #     payment_method_types=['card'],
-        #     line_items=[{
-        #     'price_data': {
-        #         'currency': 'usd',
-        #         'product_data': {
-        #         'name': 'Artwork',
-        #         },
-        #         'unit_amount': price,
-        #     },
-        #     'quantity': 1,
-        #     }],
-        #     mode='payment',
-        #     description= title,
-            
-        #     success_url='http://localhost:3000/checkout/success',
-        #     cancel_url='http://localhost:3000/checkout/cancel',
-        # )
-        # return HttpResponse(session.id, content_type='application/json')
+        
         return JsonResponse({'clientSecret':intent['client_secret']})
 
 
@@ -87,7 +68,7 @@ class SendSMS(View):
         # Your Account SID from twilio.com/console
         account_sid = "AC1e8293ab7aa268792f9f6e365ee65ddd"
         # Your Auth Token from twilio.com/console
-        auth_token  = "6c71bbb5ec8e026a7755614612e1839b"
+        auth_token  = TWILIOKEY
 
         client = Client(account_sid, auth_token)
 
