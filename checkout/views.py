@@ -67,7 +67,7 @@ class SendSMS(View):
         
         # Your Account SID from twilio.com/console
         account_sid = "AC1e8293ab7aa268792f9f6e365ee65ddd"
-        # Your Auth Token from twilio.com/console
+        # Your Auth Token from twilio.com/console pulled from secret
         auth_token  = TWILIOKEY
 
         client = Client(account_sid, auth_token)
