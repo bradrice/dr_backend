@@ -6,7 +6,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.core import serializers
-from dr_backend.settings.base import STRIPEKEY, TWILIOKEY
+from dr_backend.settings.base import STRIPEKEY, TWILIOKEY, SMSSENDNUMBER, SMSFROMNUMBER
 from twilio.rest import Client
 from artwork.models import Artwork
 
@@ -62,6 +62,7 @@ class SendSMS(View):
         id=received_json_data.get('id')
         art = Artwork.objects.get(id=id)
         art.sold = True;
+        art.forSale = False;
         art.save()
 
         
@@ -73,9 +74,8 @@ class SendSMS(View):
         client = Client(account_sid, auth_token)
 
         message = client.messages.create(
-            #to="+13304105988",  #diana
-            to="+13306359725", #brad
-            from_="+13133273437",
+            to=SMSSENDNUMBER,
+            from_=SMSFROMNUMBER,
             body=f"Art - {title} on dianarice.art sold")
 
         # print(message.sid)

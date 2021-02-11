@@ -46,6 +46,9 @@ MAILGUNAPIKEY = get_secret("MAILGUNAPIKEY")
 DEFAULTEMAILUSER = get_secret("DEFAULTEMAILUSER")
 STRIPEKEY = get_secret("STRIPEKEY")
 TWILIOKEY = get_secret("TWILIOKEY")
+SMSSENDNUMBER = get_secret("SMSSENDNUMBER")
+SMSFROMNUMBER = get_secret("SMSFROMNUMBER")
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
