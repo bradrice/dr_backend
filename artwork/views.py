@@ -71,9 +71,9 @@ class ArtworkMediaList(generics.ListAPIView):
         mediaparam = self.request.query_params.get('media', None)
         if mediaparam is not None:
             if mediaparam != 'all':
-                queryset = queryset.filter(media=mediaparam)
+                queryset = queryset.filter(media=mediaparam, showOnWebsite=True)
             else:
-                queryset = Artwork.objects.all()
+                queryset = Artwork.objects.filter(showOnWebsite=True)
         return queryset
 
 
@@ -84,7 +84,7 @@ class ArtworkMediaTypes(generics.ListAPIView):
         """
         Get unique media types from objects
         """
-        mediaitems = Artwork.objects.all().order_by('media').distinct('media')
+        mediaitems = Artwork.objects.filter(showOnWebsite=True).order_by('media').distinct('media')
         # items = set(elements)
         return mediaitems
 
