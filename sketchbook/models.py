@@ -32,6 +32,7 @@ class Sketchbook(models.Model):
         ('G', 'Gouache'),
         ('O', 'Oil'),
         ('P', 'Pencil'),
+        ('PI', 'Pen & Ink'),
         ('C', 'Charcoal'),
         ('PS', 'Pastel'),
         ('CO', 'Conte Crayon'),
@@ -39,7 +40,7 @@ class Sketchbook(models.Model):
 
     artimage = VersatileImageField(
         'Image',
-        upload_to='Sketchbook',
+        upload_to='sketchbook',
         width_field='imgwidth',
         height_field='imgheight',
         ppoi_field='ppoi',
