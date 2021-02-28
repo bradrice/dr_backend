@@ -21,6 +21,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
         path('', include('artwork.urls')),
+        path('', include('sketchbook.urls')),
         path('', include('carousel.urls')),
         path('', include('mail.urls')),
         path('', include('frontend.urls')),

@@ -76,6 +76,7 @@ INSTALLED_APPS = [
     'frontend',
     'about',
     'home',
+    'sketchbook',
     'rest_framework',
     'rest_framework.authtoken',
     'versatileimagefield',
