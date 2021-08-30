@@ -69,7 +69,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'anymail',
+    # 'anymail',
     'corsheaders',
     'artwork', # activate the new app,
     'carousel',
@@ -80,7 +80,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'versatileimagefield',
-    # 'frontend', # enable he frontend app
+    # 'frontend', # enable he frontend
     # 'checkout',
 ]
 
