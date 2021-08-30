@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 
 
-class AboutpagecontnetConfig(AppConfig):
-    name = 'AboutPageContnet'
+class AboutConfig(AppConfig):
+    default_auto_field = 'django.db.models.AutoField'
+    name = 'about'
