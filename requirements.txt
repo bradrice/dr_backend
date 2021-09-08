@@ -29,7 +29,7 @@ isort==5.5.3
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
 packaging==21.0
-Pillow==8.3.1
+Pillow==8.3.2
 proto-plus==1.19.0
 psycopg2==2.8.6
 py-moneyed==0.8.0
