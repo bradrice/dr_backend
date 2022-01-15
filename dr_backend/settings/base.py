@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'adminsortable2',
     # 'anymail',
     'corsheaders',
     'artwork', # activate the new app,

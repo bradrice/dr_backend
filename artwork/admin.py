@@ -1,11 +1,11 @@
 from django.contrib import admin
 from .models import Artwork, Category
-
+from adminsortable2.admin import SortableAdminMixin
 
 # Register your models here.
-class ArtworkAdmin(admin.ModelAdmin):
+class ArtworkAdmin(SortableAdminMixin, admin.ModelAdmin):
     js = ('js/form.js',)
-    list_display = ('title', 'forSale', 'sold', 'media', 'price')
+    list_display = ('weightedOrder', 'title', 'forSale', 'sold', 'media', 'price')
     readonly_fields = ('imgheight', 'imgwidth')
     
     # class Meta: 

@@ -71,12 +71,12 @@ class Artwork(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name="Price in US dollars")
     showOnWebsite = models.BooleanField(null=False, default=True)
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.CASCADE)
-    weightedOrder = models.IntegerField(default=20)
+    weightedOrder = models.IntegerField(default=0, blank=False, null=False)
 
     class Meta:
         verbose_name = 'Artwork'
         verbose_name_plural = 'Artworks'
-        ordering = ['weightedOrder','id']
+        ordering = ['weightedOrder']
 
 
     def __str__(self):

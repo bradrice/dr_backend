@@ -7,6 +7,7 @@ cffi==1.14.6
 chardet==3.0.4
 coverage==5.2
 Django==3.2.6
+django-admin-sortable2==1.0.3
 django-anymail==8.1
 django-cors-headers==3.5.0
 django-money==1.1
@@ -50,6 +51,6 @@ stripe==2.51.0
 toml==0.10.1
 twilio==6.51.1
 uritemplate==3.0.1
-urllib3>=1.26.5
+urllib3==1.25.11
 wincertstore==0.2
 wrapt==1.12.1
