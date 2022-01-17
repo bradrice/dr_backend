@@ -5,7 +5,7 @@ from adminsortable2.admin import SortableAdminMixin
 # Register your models here.
 class ArtworkAdmin(SortableAdminMixin, admin.ModelAdmin):
     js = ('js/form.js',)
-    list_display = ('weightedOrder', 'title', 'forSale', 'sold', 'media', 'price')
+    list_display = ('title', 'weightedOrder', 'forSale', 'sold', 'media', 'price')
     readonly_fields = ('imgheight', 'imgwidth')
     
     # class Meta: 
