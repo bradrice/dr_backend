@@ -1,0 +1,4 @@
+Requirement already up-to-date: Django in /home/bradrice/miniconda3/envs/dianarice-env/lib/python3.8/site-packages (4.0.1)
+Requirement already satisfied, skipping upgrade: asgiref<4,>=3.4.1 in /home/bradrice/miniconda3/envs/dianarice-env/lib/python3.8/site-packages (from Django) (3.4.1)
+Requirement already satisfied, skipping upgrade: backports.zoneinfo; python_version < "3.9" in /home/bradrice/miniconda3/envs/dianarice-env/lib/python3.8/site-packages (from Django) (0.2.1)
+Requirement already satisfied, skipping upgrade: sqlparse>=0.2.2 in /home/bradrice/miniconda3/envs/dianarice-env/lib/python3.8/site-packages (from Django) (0.4.1)
