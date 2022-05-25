@@ -38,7 +38,7 @@ py-moneyed==0.8.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
-PyJWT==1.7.1
+PyJWT==2.4.0
 pylint==2.6.0
 pylint-django==2.4.2
 pylint-plugin-utils==0.6
